@@ -9,4 +9,4 @@ services:
     ports:
       - "3001:3001"
     environment:
-      - VITE_API_URL=https://api.alfastoreargentina.com
+      - API=https://api.alfastoreargentina.com
