@@ -17,6 +17,9 @@ const CategorySection = ({ category_id, category_name }) => {
                 <Link to={`/admin/crear-talle/${category_id}/${category_name}`}>
                     <button>Crear talle</button>
                 </Link>
+                <Link to={`/admin/crear-producto/${category_id}/${category_name}`}>
+                    <button>Crear Producto</button>
+                </Link>
             </div>
             <div className="category-section">
                 {sizes.map((size) => (

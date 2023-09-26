@@ -1,0 +1,116 @@
+.box-create-product {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    & h3 {
+        font-family: monospace;
+    }
+
+    & form {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 85%;
+        background-color: rgb(240, 240, 240);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 10px;
+
+        & input {
+            width: 80%;
+            height: 40px;
+            border: none;
+            margin: 10px;
+            outline: none;
+            font-size: 14px;
+            text-align: center;
+            border: 1px solid rgba(99, 96, 96, 0.5);
+            border-radius: 5px;
+            font-family: monospace;
+        }
+
+        & input::placeholder {
+            text-align: start;
+            padding-left: 15px;
+            font-size: 14px;
+        }
+
+        & select {
+            width: 82%;
+            height: 40px;
+            border: none;
+            margin: 10px;
+            margin-top: 8px;
+            outline: none;
+            font-size: 14px;
+            text-align: center;
+            border: 1px solid rgba(128, 128, 128, 0.5);
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        & option {
+            width: 82%;
+            height: 40px;
+            border: none;
+            margin: 10px;
+            margin-top: 8px;
+            outline: none;
+            font-size: 14px;
+            text-align: center;
+            border: 1px solid rgba(128, 128, 128, 0.5);
+            border-radius: 5px;
+            font-family: monospace;
+        }
+
+        & button {
+            width: 82%;
+            height: 40px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(150, 150, 255);
+            color: white;
+        }
+    }
+}
+
+#input-file {
+    display: none;
+}
+.input-file {
+    width: 82%;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    margin-top: 8px;
+    border-radius: 5px;
+    background-color: rgb(103, 103, 103);
+    font-family: monospace;
+}
+.animation {
+    height: 42px;
+    filter: brightness(40%);
+}
+
+.animation-out {
+    height: 42px;
+    filter: brightness(40%);
+    opacity: 0;
+}
+
+.input-file p {
+    font-family: monospace;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+}
+.input-file-cantity {
+    margin: 0;
+    margin-bottom: 15px;
+}
