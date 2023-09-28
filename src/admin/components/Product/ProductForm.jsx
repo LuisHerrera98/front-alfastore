@@ -22,9 +22,12 @@ const ProductForm = ({ category_id, category_name }) => {
     name: '',
     cost: '',
     price: '',
-    category: ''
-
+    category: '',
   });
+
+  const [stock, setStock] = useState([])
+
+
   const [image, setImage] = useState([]);
 
   const [success, setSuccess] = useState(false);
@@ -51,7 +54,9 @@ const ProductForm = ({ category_id, category_name }) => {
   useEffect(() => {
     fetchCategories(setCategories);
     fetchSizes(setSizes, category_id)
-    console.log(sizes);
+    setStock(sizes);
+    console.log(stock);
+    
   }, []);
 
   return (
@@ -121,6 +126,9 @@ const ProductForm = ({ category_id, category_name }) => {
           onChange={handleImage}
           multiple
         />
+        {sizes.map((size, index) => (
+                  <p key={size._id}>{size.name} <input type="number" name={size.name} placeholder="cantidad.."/></p>
+              ))}
         <button type="submit">Crear</button>
       </form>
     </div>
