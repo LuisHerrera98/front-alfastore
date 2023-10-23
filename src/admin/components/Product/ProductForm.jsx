@@ -12,6 +12,7 @@ import fetchSizes from "../../utils/fetchSizes";
 
 const ProductForm = ({ category_id, category_name }) => {
   const navigate = useNavigate();
+  const stockArray = []
 
   const [loading, setLoading] = useState(false)
 
@@ -37,13 +38,13 @@ const ProductForm = ({ category_id, category_name }) => {
   const handleFormSubmit = async (event) => {
     setLoading(true);
     event.preventDefault();
-    const product = await createProduct(name, cost, price, image, category_id)
+    const product = await createProduct(name, cost, price, image, category_id, event)
     setLoading(false);
     product ? setSuccess(true) : setError(true)
-    setTimeout(() => {
-      onResetForm()
-      navigate("/admin/panel");
-    }, 2000);
+    // setTimeout(() => {
+    //   onResetForm()
+    //   navigate("/admin/panel");
+    // }, 2000);
   };
 
   const handleImage = (e) => {
@@ -54,8 +55,11 @@ const ProductForm = ({ category_id, category_name }) => {
   useEffect(() => {
     fetchCategories(setCategories);
     fetchSizes(setSizes, category_id)
-    setStock(sizes);
-    console.log(stock);
+    for(let i = 0; i < sizes.length; i++){
+      console.log(sizes[i]);
+      stockArray.push({id: size[i]._id, })
+    }
+    console.log(sizes);
     
   }, []);
 
@@ -127,7 +131,7 @@ const ProductForm = ({ category_id, category_name }) => {
           multiple
         />
         {sizes.map((size, index) => (
-                  <p key={size._id}>{size.name} <input type="number" name={size.name} placeholder="cantidad.."/></p>
+                  <p key={size._id}>{size.name} <input type="number" name={size.name} placeholder="cantidad.." id={size._id}/></p>
               ))}
         <button type="submit">Crear</button>
       </form>
