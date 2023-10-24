@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import Success from "../notify/Success"
 import Error from "../notify/Error"
 import useForm from "../../hooks/useForm";
@@ -11,7 +11,7 @@ import LoadingLarge from "../loadings/LoadingLarge";
 import fetchSizes from "../../utils/fetchSizes";
 
 const ProductForm = ({ category_id, category_name }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const stockArray = []
 
   const [loading, setLoading] = useState(false)
@@ -25,10 +25,6 @@ const ProductForm = ({ category_id, category_name }) => {
     price: '',
     category: '',
   });
-
-  const [stock, setStock] = useState([])
-
-
   const [image, setImage] = useState([]);
 
   const [success, setSuccess] = useState(false);
@@ -41,10 +37,10 @@ const ProductForm = ({ category_id, category_name }) => {
     const product = await createProduct(name, cost, price, image, category_id, event)
     setLoading(false);
     product ? setSuccess(true) : setError(true)
-    // setTimeout(() => {
-    //   onResetForm()
-    //   navigate("/admin/panel");
-    // }, 2000);
+    setTimeout(() => {
+      onResetForm()
+      // navigate("/admin/panel");
+    }, 2000);
   };
 
   const handleImage = (e) => {
@@ -59,8 +55,6 @@ const ProductForm = ({ category_id, category_name }) => {
       console.log(sizes[i]);
       stockArray.push({id: size[i]._id, })
     }
-    console.log(sizes);
-    
   }, []);
 
   return (

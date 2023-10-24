@@ -15,6 +15,7 @@ const createArraySizes = (inputs) => {
             stocks.push(new Size(inputs.target[i].id, inputs.target[i].name, inputs.target[i].value));
         }
     }
+    stocks.pop()
     const stock = JSON.stringify(stocks);
     return stock;
 }
