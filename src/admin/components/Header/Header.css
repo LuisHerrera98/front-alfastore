@@ -47,7 +47,7 @@
         & .close {
             background-color: black;
             position: absolute;
-            top: 43px;
+            top: 42px;
             z-index: 1;
 
             & ul {

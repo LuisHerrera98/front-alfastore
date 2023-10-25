@@ -23,14 +23,14 @@ const CategorySection = ({ category_id, category_name }) => {
             </div>
             <div className="category-section">
                 {sizes.map((size) => (
-                    <a key={size._id} href={``}>
+                    <Link key={size._id} to={`/admin/products/${category_id}/${size._id}`}>
                         <div>
                             <img src={Carpeta} alt="" />
                             <div>
                                 <p> TALLE {size.name}</p>
                             </div>
                         </div>
-                    </a>
+                    </Link>
                 ))}
             </div>
         </div>
