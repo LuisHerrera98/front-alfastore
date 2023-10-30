@@ -6,12 +6,12 @@ import ProductsList from '../components/Product/ProductsList'
 
 const Products = () => {
     
-    const {category_id, size_id} = useParams();
+    const {category_id, size_id, category_name, size_name} = useParams();
     
   return (
     <div>
         <Header />
-        <ProductsList category_id={category_id} size_id={size_id} />
+        <ProductsList category_id={category_id} size_id={size_id} category_name={category_name} size_name={size_name}/>
     </div>
   )
 }

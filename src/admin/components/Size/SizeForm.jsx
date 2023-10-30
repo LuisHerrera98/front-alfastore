@@ -33,20 +33,19 @@ const SizeForm = ({ category_id, category_name }) => {
         <Error type="size" />
       ) : null
     }
-    <h3>Crear talle en {category_name}</h3>
+    <p>CREAR TALLE EN {category_name}</p>
 
     <form onSubmit={handleFormSubmit}>
-      <label htmlFor="name">Nombre</label>
       <input
         id="name"
         name="name"
         type="text"
-        placeholder="nombre.."
+        placeholder="ingresa el nombre.."
         value={name}
         onChange={onInputChange}
         autoComplete="off"
       />
-      <button type="submit">Crear</button>
+      <button type="submit">CREAR</button>
     </form>
   </div>
 }

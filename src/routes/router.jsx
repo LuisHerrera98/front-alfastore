@@ -8,6 +8,8 @@ import Category from "../admin/views/Category";
 import Size from "../admin/views/Size";
 import ProductCreate from "../admin/views/ProductCreate";
 import Products from "../admin/views/Products";
+import MethodPayment from "../admin/views/MethodPayment";
+
 
 const router = createBrowserRouter([
   {
@@ -39,8 +41,12 @@ const router = createBrowserRouter([
     element: <Size />,
   },
   {
-    path: "/admin/products/:category_id/:size_id",
+    path: "/admin/products/:category_id/:size_id/:category_name/:size_name",
     element: <Products />,
+  },
+  {
+    path: "/admin/productsLoad/:category_id/:size_id/:category_name/:size_name/:product_id",
+    element: <MethodPayment />,
   },
 ]);
 

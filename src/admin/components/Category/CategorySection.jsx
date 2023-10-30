@@ -9,21 +9,27 @@ const CategorySection = ({ category_id, category_name }) => {
 
     useEffect(() => {
         fetchSizes(setSizes, category_id)
-    }, [category_id]);
+    }, [category_id]);2
 
     return (
         <div>
+            <h3 className="category-section-title">{category_name}</h3>
             <div className="box-button">
                 <Link to={`/admin/crear-talle/${category_id}/${category_name}`}>
                     <button>Crear talle</button>
                 </Link>
-                <Link to={`/admin/crear-producto/${category_id}/${category_name}`}>
+                {
+                    sizes.length > 0 ? (
+                        <Link to={`/admin/crear-producto/${category_id}/${category_name}`}>
                     <button>Crear Producto</button>
                 </Link>
+                    ) : (null)
+                }
+                
             </div>
             <div className="category-section">
                 {sizes.map((size) => (
-                    <Link key={size._id} to={`/admin/products/${category_id}/${size._id}`}>
+                    <Link key={size._id} to={`/admin/products/${category_id}/${size._id}/${category_name}/${size.name}`}>
                         <div>
                             <img src={Carpeta} alt="" />
                             <div>
