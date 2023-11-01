@@ -1,10 +1,5 @@
 const fetchProductsByCategorySize = async (setProducts, category_id, size_id) => {
 
-    const data = {
-        category_id,
-        size_id
-    }
-
     try {
         const response = await fetch(
             `${import.meta.env.VITE_API_URL}/product/products/category`, {
@@ -12,15 +7,13 @@ const fetchProductsByCategorySize = async (setProducts, category_id, size_id) =>
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({category_id, size_id})
         }
         );
-        if (response.ok) {
-            const data = await response.json();
-            setProducts(data);
-        } else {
-            console.error("Error al obtener las categorías");
-        }
+
+        const data = await response.json();
+        setProducts(data)
+
     } catch (error) {
         console.error("Error de red:", error);
     }

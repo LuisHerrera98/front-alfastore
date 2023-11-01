@@ -44,10 +44,6 @@ const router = createBrowserRouter([
     path: "/admin/products/:category_id/:size_id/:category_name/:size_name",
     element: <Products />,
   },
-  {
-    path: "/admin/productsLoad/:category_id/:size_id/:category_name/:size_name/:product_id",
-    element: <MethodPayment />,
-  },
 ]);
 
 export default router
