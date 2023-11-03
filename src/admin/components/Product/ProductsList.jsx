@@ -15,8 +15,12 @@ const ProductsList = ({ category_id, size_id, category_name, size_name }) => {
   const [modalPayment, setModalPayment] = useState(false)
   const [productSelect, setProductSelect] = useState({
     id: "",
+    name: "",
     size_id: "",
-    category_id: ""
+    category_id: "",
+    cost: 0,
+    price: 0,
+    image: ""
   })
 
   useEffect(() => {
@@ -36,7 +40,7 @@ const ProductsList = ({ category_id, size_id, category_name, size_name }) => {
         </ResponsiveMasonry>
       </div>
       { modalIncrement ? (<AcceptIncrement setModalIncrement={setModalIncrement} product={productSelect} setProducts={setProducts} />) : (null)}
-      { modalPayment ? (<MethodPayment product={productSelect} setModalPayment={setModalPayment} setProducts={setProducts}/>) : (null)}
+      { modalPayment ? (<MethodPayment product={productSelect} setModalPayment={setModalPayment} setProducts={setProducts} category_name={category_name} size_name={size_name}/>) : (null)}
     </div>
   )
 }

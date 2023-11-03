@@ -1,0 +1,32 @@
+.section-data-sells{
+    width: 100%;
+    padding-top: 15px;
+
+    & h2 {
+        font-family: monospace;
+        text-align: center;
+    }
+
+    & .box-date-sell {
+        width: 70%;
+        margin-left: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: bisque;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        height: 40px;
+    }
+
+    & a {
+        text-decoration: none;
+        color: black;
+
+        & .box-date-sell {
+            & h4{
+                margin: 0;
+            }
+        }
+    }
+} 

@@ -1,15 +1,17 @@
-import React, {useState} from 'react'
+import React from 'react'
 import fetchProductsByCategorySize from '../../utils/fetchProductsByCategorySize';
 import decrementAndSell from '../../utils/decrementAndSell'
 
 import "./modalMethodPayment.css"
+import createSell from '../../utils/createSell';
 
-const ModalMethodPayment = ({product, setModalPayment, setProducts }) => {
+const ModalMethodPayment = ({product, setModalPayment, setProducts, category_name, size_name }) => {
 
-  const handleSell = async (type) => {
-    console.log(type);
+  const handleSell = async (method_payment) => {
     await decrementAndSell(product.id, product.size_id);
     await fetchProductsByCategorySize(setProducts, product.category_id, product.size_id);
+    await createSell(product.name, category_name, product.cost, product.price, product.image, size_name, method_payment)
+
     setModalPayment(false);
   }
 

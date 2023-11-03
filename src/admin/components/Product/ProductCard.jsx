@@ -15,8 +15,12 @@ const ProductCard = ({ product, size_id, setModalIncrement, setModalPayment, set
         setModalPayment(true)
         setProductSelect({
             id: product._id,
+            name: product.name,
             size_id: size_id,
-            category_id: product.category_id
+            category_id: product.category_id,
+            cost: product.cost,
+            price: product.price,
+            image: product.images[0]
         })
     }
 

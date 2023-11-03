@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import fetchCategories from "../../utils/fetchCategories";
 import Logo from "./images/alfastore-icon.png";
 import Menu from "./images/menubar.png";
@@ -30,6 +30,9 @@ const Header = ({reload = null, setReload = null}) => {
         {openMenu ? (
           <div className="close">
             <ul>
+            <Link className="title" to={`/admin/dateSells`}>
+                  <li>VENTAS</li>
+                </Link>
               {categories.map((category) => (
                 <Link key={category._id} className="title" to={`/admin/categoria/${category._id}/${category.name}`}>
                   <li>{category.name}</li>

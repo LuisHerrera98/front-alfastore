@@ -8,17 +8,13 @@ import Category from "../admin/views/Category";
 import Size from "../admin/views/Size";
 import ProductCreate from "../admin/views/ProductCreate";
 import Products from "../admin/views/Products";
-import MethodPayment from "../admin/views/MethodPayment";
-
+import DateSells from "../admin/views/DateSells";
+import SellsDay from "../admin/views/SellsDay";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/admin/inicio",
-    element: <Home />,
+    element: <Home />
   },
   {
     path: "/admin/panel",
@@ -44,6 +40,14 @@ const router = createBrowserRouter([
     path: "/admin/products/:category_id/:size_id/:category_name/:size_name",
     element: <Products />,
   },
+  {
+    path: "/admin/dateSells",
+    element: <DateSells />,
+  },
+  {
+    path: "/admin/sells/:date",
+    element: <SellsDay />,
+  }
 ]);
 
 export default router
