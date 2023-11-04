@@ -20,9 +20,9 @@ const ModalMethodPayment = ({product, setModalPayment, setProducts, category_nam
       <div className='box-buttons-payment'>
           <h1 onClick={() => {setModalPayment(false)}}>x</h1>
         <h3>Método de pago</h3>
-        <button onClick={()=>{handleSell("cash")}} className='button-cash'>Efectivo</button>
-        <button onClick={()=>{handleSell("transfer")}} className='button-transfer'>Transferencia</button>
-        <button onClick={()=>{handleSell("card")}} className='button-card'>Tarjeta</button>
+        <button onClick={()=>{handleSell("EFECTIVO")}} className='button-cash'>Efectivo</button>
+        <button onClick={()=>{handleSell("TRANSFERENCIA")}} className='button-transfer'>Transferencia</button>
+        <button onClick={()=>{handleSell("TARJETA")}} className='button-card'>Tarjeta</button>
       </div>
     </div>
   )

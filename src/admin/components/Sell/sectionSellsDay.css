@@ -2,34 +2,205 @@
     & h3 {
         text-align: center;
     }
+    
+    & p {
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    & .box-arrox-red {
+        color: red;
+        font-weight: bold;
+    }
 
     & .box-sell {
-        width: 90%;
+        width: 98%;
         background-color: rgb(226, 226, 226);
         height: 80px;
-        margin-left: 5%;
+        margin-left: 1%;
         margin-bottom: 5px;
         display: flex;
 
         & .box-image {
-            width: 25%;
+            width: 18%;
+            height: 75px;
             & img {
-                width: 70px;
-                max-height: 70px;
+                width: 100%;
+                height: 70px;
                 margin-top: 5px;
-                margin-left: 5px;
                 border-radius: 10px;
             }
         }
 
         & .box-data {
-            width: 75%;
+            width: 80%;
             font-family: monospace;
-
-            & p{
+            position: relative;
+            margin-left: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            & p {
                 margin: 0;
-                margin-top: 5px;
+                margin-top: 3px;
             }
+
+            & .box-name-size {
+                width: 100%;
+                display: flex;
+                & p {
+                    margin: 0;
+                    margin-top: 3px;
+                    font-weight: bold;
+                }
+
+                & .box-size-sell {
+                    color: red;
+                }
+            }
+
+            & .box-category-hour {
+                width: 100%;
+                display: flex;
+
+                & p {
+                    margin: 0;
+                    margin-top: 3px;
+                }
+
+                & .hour-sell {
+                    position: absolute;
+                    top: 0px;
+                    right: 1px;
+                    color: blue;
+                    font-weight: bold;
+                }
+            }
+
+            & .box-method-payment {
+                display: flex;
+
+                & .box-method-EFECTIVO {
+                    color: rgb(1, 155, 1);;
+                }
+
+                & .box-method-TRANSFERENCIA {
+                    color: rgb(65, 65, 255);
+                }
+
+                & .box-method-TARJETA {
+                    color: rgb(150, 150, 255)
+                }
+            }
+
+            & .box-cost-price {
+                width: 100%;
+                display: flex;
+
+                & p {
+                    margin: 0;
+                    margin-top: 3px;
+                }
+
+                & .box-cost-sell {
+                    color: red;
+                }
+
+                & .box-ganancy-sell {
+                    color: rgb(74, 112, 17);
+                }
+
+                & .box-price-sell {
+                    position: absolute;
+                    right: 1px;
+                    bottom: 3px;
+                    color: green;
+                    font-size: 12px;
+                }
+            }
+            
         }
     }
 }
+
+@media (max-width: 340px) {
+    .section-sells-day {
+        & h3 {
+            text-align: center;
+        }
+    
+        & .box-sell {
+            width: 98%;
+            background-color: rgb(226, 226, 226);
+            height: 80px;
+            margin-left: 1%;
+            margin-bottom: 5px;
+            display: flex;
+    
+            & .box-image {
+                width: 16%;
+                height: 75px;
+                margin-left: 5px;
+                & img {
+                    width: 100%;
+                    height: 70px;
+                    margin-top: 5px;
+                    border-radius: 11px;
+                }
+            }
+    
+            & .box-data {
+                width: 80%;
+                font-family: monospace;
+                position: relative;
+                margin-left: 5px;
+                & p {
+                    margin: 0;
+                    margin-top: 5px;
+                    font-size: 11px;
+                }
+    
+                & .box-name-size {
+                    width: 100%;
+                    display: flex;
+                    & p {
+                        margin: 0;
+                        margin-top: 5px;
+                        font-size: 11px;
+                    }
+                }
+    
+                & .box-category-hour {
+                    width: 100%;
+                    display: flex;
+    
+                    & p {
+                        margin: 0;
+                        margin-top: 5px;
+                        font-size: 11px;
+                    }
+    
+                    & .hour-sell {
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        color: blue;
+                        font-size: 11px;
+                    }
+                }
+    
+                & .box-cost-price {
+                    width: 100%;
+                    display: flex;
+    
+                    & p {
+                        margin: 0;
+                        margin-top: 5px;
+                        font-size: 11px;
+                    }
+                }
+                
+            }
+        }
+    }
+  }
