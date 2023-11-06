@@ -12,10 +12,6 @@ const Section = () => {
         <button>
           <Link to={`/admin/crear-categoria`}>Crear categoria</Link>
         </button>
-        <br />
-        <button>
-          <Link to={`/admin/crear-producto`}>Crear producto</Link>
-        </button>
       </div>
       <hr />
     </div>

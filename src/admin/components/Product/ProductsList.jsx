@@ -31,7 +31,7 @@ const ProductsList = ({ category_id, size_id, category_name, size_name }) => {
     <div className='product-list'>
       <h3> {category_name} EN TALLE {size_name}</h3>
       <div className='section-card-products'>
-        <ResponsiveMasonry columnsCountBreakPoints={{ 280: 1, 320: 2, 600: 3, 900: 4, 1300: 5 }}>
+        <ResponsiveMasonry columnsCountBreakPoints={{ 250: 1, 290: 2, 600: 3, 900: 4, 1300: 5 }}>
           <Masonry gutter={15}>
             {products.map((product) => (
               <ProductCard key={product._id} product={product} size_id={size_id} setModalIncrement={setModalIncrement} setModalPayment={setModalPayment} setProductSelect={setProductSelect}/>

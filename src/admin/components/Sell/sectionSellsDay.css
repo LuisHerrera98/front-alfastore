@@ -48,6 +48,7 @@
             & .box-name-size {
                 width: 100%;
                 display: flex;
+                align-items: center;
                 & p {
                     margin: 0;
                     margin-top: 3px;
@@ -62,6 +63,7 @@
             & .box-category-hour {
                 width: 100%;
                 display: flex;
+                align-items: center;
 
                 & p {
                     margin: 0;
@@ -79,6 +81,7 @@
 
             & .box-method-payment {
                 display: flex;
+                align-items: center;
 
                 & .box-method-EFECTIVO {
                     color: rgb(1, 155, 1);;
@@ -96,6 +99,7 @@
             & .box-cost-price {
                 width: 100%;
                 display: flex;
+                align-items: center;
 
                 & p {
                     margin: 0;
@@ -113,7 +117,6 @@
                 & .box-price-sell {
                     position: absolute;
                     right: 1px;
-                    bottom: 3px;
                     color: green;
                     font-size: 12px;
                 }

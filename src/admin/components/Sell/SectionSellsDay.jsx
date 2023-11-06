@@ -7,9 +7,14 @@ import fetchSells from '../../utils/fetchSells'
 const SectionSellsDay = ({ date }) => {
 
     const [sells, setSells] = useState([])
+    const [total, setTotal] = useState("");
+    const [ganancy, setGanancy] = useState("");
+    const [cash, setCash] = useState("")
+    const [transfer, setTransfer] = useState("")
+    const [card, setCard] = useState("")
 
     useEffect(() => {
-        fetchSells(setSells, date)
+        fetchSells(setSells, date, setTotal, setGanancy, setCash, setTransfer, setCard)
     }, [])
 
     return (
@@ -48,6 +53,11 @@ const SectionSellsDay = ({ date }) => {
                     </div>
                 </div>
             ))}
+            <h1>total: {total}</h1>
+            <h1>Ganancia: {ganancy}</h1>
+            <h1>Efectivo: {cash}</h1>
+            <h1>Transferencia: {transfer}</h1>
+            <h1>Tarjeta: {card}</h1>
         </div>
     )
 }
