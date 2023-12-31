@@ -3,6 +3,7 @@ import './sectionSellsDay.css'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import fetchSells from '../../utils/fetchSells'
+import CreateSell from '../Modals/CreateSell'
 
 const SectionSellsDay = ({ date }) => {
 
@@ -44,20 +45,26 @@ const SectionSellsDay = ({ date }) => {
 
                         </div>
                         <div className='box-cost-price'>
-                            <p>Costoㅤ</p>
+                            <p className='box-ganancy'>Costoㅤ</p>
                             <p className='box-cost-sell'> ${sell.cost}ㅤ</p>
-                            <p>Gananciaㅤ</p>
+                            <p className='box-ganancy'>Gananciaㅤ</p>
                             <p className='box-ganancy-sell'>${sell.price - sell.cost}</p>
                             <p className='box-price-sell'>${sell.price}</p>
                         </div>
                     </div>
                 </div>
             ))}
-            <h1>total: {total}</h1>
-            <h1>Ganancia: {ganancy}</h1>
-            <h1>Efectivo: {cash}</h1>
-            <h1>Transferencia: {transfer}</h1>
-            <h1>Tarjeta: {card}</h1>
+            <div className='box-totals'>
+                <p className='p-cash' >Efectivo {cash}</p>
+                <p className='p-transfer'>Transferencia {transfer}</p>
+                <p className='p-card'>Tarjeta {card}</p>
+            </div>
+            <div className='box-totals-info'>
+                {/* <p className='p-ganancy'>Ganancia {ganancy}</p> */}
+                <p className='p-total'>Total ${total}</p>
+            </div>
+
+            <CreateSell />
         </div>
     )
 }

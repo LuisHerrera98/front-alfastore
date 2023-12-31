@@ -2,7 +2,7 @@
     & h3 {
         text-align: center;
     }
-    
+     
     & p {
         font-weight: bold;
         font-size: 12px;
@@ -106,8 +106,13 @@
                     margin-top: 3px;
                 }
 
+                & .box-ganancy {
+                    margin: 0;
+                }
+
                 & .box-cost-sell {
                     color: red;
+                    margin: 0;
                 }
 
                 & .box-ganancy-sell {
@@ -122,6 +127,43 @@
                 }
             }
             
+        }
+    }
+
+    & .box-totals {
+        display: flex;
+        position: relative;
+        margin-bottom: 20px;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+
+        & p {
+            font-size: 13px;
+            font-family: monospace;
+            text-align: center;
+        }
+
+        & .p-cash {
+            color: rgb(74, 112, 17);
+        }
+
+        & .p-transfer {
+            color: rgb(65, 65, 255);
+        }
+
+        & .p-card {
+            color: rgb(150, 150, 255);
+        }
+    }
+
+    & .box-totals-info {
+        & p {
+            text-align: center;
+            font-family: monospace;
+            font-size: 16px;
+            color: green;
+            margin-top: 5px;
         }
     }
 }
