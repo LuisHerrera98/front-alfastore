@@ -5,7 +5,7 @@ const fetchDateSell = async (setDateSells) => {
       );
       if (response.ok) {
         const data = await response.json();
-        setDateSells(data);
+        setDateSells(data.reverse());
       } else {
         console.error("Error al obtener las fechas de ventas");
       }

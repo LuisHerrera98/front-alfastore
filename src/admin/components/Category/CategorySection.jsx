@@ -9,7 +9,7 @@ const CategorySection = ({ category_id, category_name }) => {
 
     useEffect(() => {
         fetchSizes(setSizes, category_id)
-    }, [category_id]);2
+    }, [category_id]);
 
     return (
         <div>

@@ -1,0 +1,36 @@
+.title-create-sell {
+    font-family: monospace;
+    font-size: 17px;
+    text-align: center;
+}
+
+.form-create-sell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & input {
+        width: 60%;
+        height: 22px;
+        margin-bottom: 10px;
+        font-family: monospace;
+    }
+
+    & select {
+        width: 62%;
+        height: 22px;
+        margin-bottom: 10px;
+        font-family: monospace;
+    }
+
+    & button {
+        width: 62%;
+        border: none;
+        justify-content: center;
+        border-radius: 5px;
+        height: 28px;
+        background-color: rgb(116, 116, 250);
+        color: white;
+    }
+}

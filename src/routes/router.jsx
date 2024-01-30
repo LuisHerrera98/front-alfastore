@@ -13,7 +13,7 @@ import SellsDay from "../admin/views/SellsDay";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/admin",
     element: <Home />
   },
   {
