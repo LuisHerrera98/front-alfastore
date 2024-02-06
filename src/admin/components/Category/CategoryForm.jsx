@@ -1,53 +1,71 @@
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import Success from "../notify/Success"
-import Error from "../notify/Error"
+import { useNavigate } from "react-router-dom";
+import Success from "../notify/Success";
+import Error from "../notify/Error";
 import "./categoryForm.css";
 import useForm from "../../hooks/useForm";
 import createCategory from "../../utils/createCategory";
+import subir from "./images/subir.gif";
 
 const CategoryForm = ({ setReload }) => {
   const navigate = useNavigate();
   const { name, onInputChange, onResetForm } = useForm({
-    name: ''
+    name: ""
   });
 
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false)
+  const [error, setError] = useState(false);
+  const [image, setImage] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-    createCategory(name, setReload, setSuccess, setError, onResetForm)
-    setTimeout(() => {
-      navigate("/admin/panel");
-    }, 2000);
+    await createCategory(name, image);
+    
+      navigate("/admin/");
+    
+  };
+
+  const handleImage = (e) => {
+    setImage(e.target.files);
   };
 
   return (
-    <div className="box-create-size">
-      {
-        success ? (
-          <Success type="category" />
-        ) :
-          null
-      }
-      {
-        error ? (
-          <Error type="category" />
-        ) : null
-      }
+    <div className="box-create-category">
       <h3>Crear Categoria</h3>
 
       <form onSubmit={handleFormSubmit}>
-        <label htmlFor="name">Nombre</label>
         <input
           id="name"
           name="name"
           type="text"
-          placeholder="nombre.."
+          placeholder="Nombre"
           value={name}
           onChange={onInputChange}
           autoComplete="off"
+        />
+        <label className="input-file" htmlFor="input-file">
+          {loading ? (
+            <img className="animation-out" src={subir} alt="" />
+          ) : (
+            <img className="animation" src={subir} alt="" />
+          )}
+          <p>Subir imagen</p>
+          {loading ? (
+            <img className="animation-out" src={subir} alt="" />
+          ) : (
+            <img className="animation" src={subir} alt="" />
+          )}
+        </label>
+        {image.length > 0 ? (
+          <p className="input-file-cantity">{image.length} archivos subidos</p>
+        ) : null}
+        <input
+          id="input-file"
+          type="file"
+          placeholder="seleccione las imagenes"
+          name="image"
+          onChange={handleImage}
+          multiple
         />
         <button type="submit">Crear</button>
       </form>

@@ -1,30 +1,27 @@
-const createCategory = (name,setReload, setSuccess, setError, onResetForm) => {
+const createCategory = async (name,image) => {
     const data = {
       name
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}/category/create`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        if (response.ok) {
-          setSuccess(true)
-          onResetForm();
-          setReload(true)
-          setTimeout(() => {
-          setSuccess(false)
-          }, 5000);
-        } else {
-          console.error("Error en la solicitud POST");
-        }
+    const formData = new FormData()
+    formData.append("name", name)
+    for (let i = 0; i < image.length; i++) {
+        formData.append("image", image[i])
+    }
+
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/category/create`, {
+          method: 'POST', 
+          body: formData
       })
-      .catch((error) => {
-        setError(true);
-      });
+      const data = await response.json()
+      if (data) {
+          return true
+      }
+  } catch (error) {
+      console.log(error);
+      return false
+  }
   };
 
   export default createCategory
