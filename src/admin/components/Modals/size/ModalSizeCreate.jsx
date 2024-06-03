@@ -46,6 +46,12 @@ const ModalSizeCreate = ({
 
   return (
     <div className="modal-create-size">
+      {
+        openSuccess ? (<Success message={message}/>) : (null)
+      }
+      {
+        openError ? (<Error message={message}/>) : (null)
+      } 
       <form onSubmit={handleFormSubmit} className="modal-create-size-form">
         <h3>CREAR TALLE</h3>
         <p
@@ -81,12 +87,6 @@ const ModalSizeCreate = ({
             loading={loading}
           />
         )}
-      {
-        openSuccess ? (<Success message={message}/>) : (null)
-      }
-      {
-        openError ? (<Error message={message}/>) : (null)
-      } 
       </form>
       
     </div>
