@@ -48,7 +48,6 @@
             outline: none;
             font-size: 14px;
             text-align: center;
-            border: 1px solid rgba(128, 128, 128, 0.5);
             border-radius: 5px;
             font-family: monospace;
         }
@@ -61,7 +60,6 @@
             outline: none;
             font-size: 14px;
             text-align: center;
-            border: 1px solid rgba(128, 128, 128, 0.5);
             border-radius: 5px;
             font-family: monospace;
         }
@@ -83,7 +81,6 @@
 }
 .input-file {
     width: 82%;
-    border: 1px solid rgba(128, 128, 128, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,4 +110,10 @@
 .input-file-cantity {
     margin: 0;
     margin-bottom: 15px;
+}
+.box-sizes-create-product{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 }

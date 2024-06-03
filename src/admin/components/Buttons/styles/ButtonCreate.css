@@ -1,0 +1,29 @@
+.button-create {
+  position: relative;
+  border: none;
+  height: 30px;
+  color: white;
+  border-radius: 5px;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.small {
+    width: 150px;
+  }
+  &.medium {
+    width: 180px;
+  }
+  &.red {
+    background-color: rgb(188, 71, 71);
+  }
+  &.blue {
+    background-color: rgb(71, 75, 188);
+  }
+
+  &.disabled-true {
+    color: black;
+    background-color: rgba(207, 207, 207, 0.7);
+  }
+}

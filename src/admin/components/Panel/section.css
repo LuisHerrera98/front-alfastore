@@ -24,7 +24,7 @@
             font-family:monospace;
         }
 
-        & button {
+        & .section-button {
             width: 250px;
             border: none;
             background-color: rgb(188, 71, 71);

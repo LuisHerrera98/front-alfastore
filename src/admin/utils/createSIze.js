@@ -1,30 +1,28 @@
-const createSize = (name, setSuccess, onResetForm, setError, category_id) => {
-    const data = {
-        name,
-        category_id
-      };
-  
-      fetch(`${import.meta.env.VITE_API_URL}/size/create`, {
+const createSize = async (name, category_id) => {
+  const body = {
+    name,
+    category_id,
+  };
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/size/create`,
+      {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
-      })
-        .then((response) => {
-          if (response.ok) {
-            setSuccess(true)
-            onResetForm();
-            setTimeout(() => {
-            setSuccess(false)
-            }, 5000);
-          } else {
-            console.error("Error en la solicitud POST");
-          }
-        })
-        .catch((error) => {
-          setError(true);
-        });
-}
+        body: JSON.stringify(body),
+      }
+    );
+    const statusCode = response.status;
+    const data = await response.json();
+    if (data) {
+      return [data.message, statusCode]
+    }
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
+};
 
-export default createSize
+export default createSize;

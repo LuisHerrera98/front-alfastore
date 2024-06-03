@@ -1,7 +1,4 @@
 const createCategory = async (name,image) => {
-    const data = {
-      name
-    };
 
     const formData = new FormData()
     formData.append("name", name)
@@ -14,9 +11,10 @@ const createCategory = async (name,image) => {
           method: 'POST', 
           body: formData
       })
+      const statusCode = response.status;
       const data = await response.json()
-      if (data) {
-          return true
+      if(data){
+          return [data.message, statusCode]
       }
   } catch (error) {
       console.log(error);

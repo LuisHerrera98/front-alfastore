@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Success from "../notify/Success"
 import Error from "../notify/Error"
 import useForm from "../../hooks/useForm";
@@ -11,7 +11,7 @@ import LoadingLarge from "../loadings/LoadingLarge";
 import fetchSizes from "../../utils/fetchSizes";
 
 const ProductForm = ({ category_id, category_name }) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const stockArray = []
 
   const [loading, setLoading] = useState(false)
@@ -39,7 +39,7 @@ const ProductForm = ({ category_id, category_name }) => {
     product ? setSuccess(true) : setError(true)
     setTimeout(() => {
       onResetForm()
-      // navigate("/admin/panel");
+      navigate("/admin/");
     }, 2000);
   };
 
@@ -125,7 +125,10 @@ const ProductForm = ({ category_id, category_name }) => {
           multiple
         />
         {sizes.map((size, index) => (
-                  <p key={size._id}>{size.name} <input type="number" name={size.name} placeholder="cantidad.." id={size._id}/></p>
+                  <div key={size._id} className="box-sizes-create-product">
+                    <p>{size.name}</p>
+                    <input className="input-product-size" type="number" name={size.name} placeholder="cantidad.." id={size._id}/>
+                  </div>
               ))}
         <button type="submit">Crear</button>
       </form>

@@ -8,6 +8,7 @@
 
     & .link-logo {
         text-decoration: none;
+        width: 33% !important;
     }
 
     & .box-left {

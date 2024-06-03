@@ -15,9 +15,9 @@ const SizeForm = ({ category_id, category_name }) => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false)
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-    createSize(name, setSuccess, onResetForm, setError, category_id)
+    await createSize(name, setSuccess, onResetForm, setError, category_id)
     navigate(`/admin/categoria/${category_id}/${category_name}`);
   };
 
