@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Success from "../../notify/Success";
-import Promise from 'bluebird';
 import Error from "../../notify/Error";
 import "./categoryForm.css";
 import createCategory from "../../../utils/createCategory";
@@ -32,12 +31,14 @@ const CategoryForm = ({ setOpenModalCreateCategory }) => {
     setMessage(message)
     if(statusCode === 201) {
       setOpenSuccess(true)
-      await Promise.delay(1200);
+      setTimeout(() => {
+      }, 1200);
       setOpenSuccess(false)
       navigate("/admin/");
     }else{
       setOpenError(true)
-      await Promise.delay(1200);
+      setTimeout(() => {
+      }, 1200);
       setOpenError(false)
     }
     setLoading(false);
