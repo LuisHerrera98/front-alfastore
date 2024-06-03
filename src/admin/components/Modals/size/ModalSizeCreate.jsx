@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./ModalSizeCreate.css";
 import useForm from "../../../hooks/useForm";
 import ButtonCreate from "../../Buttons/ButtonCreate";
-import Promise from 'bluebird';
 import Success from "../../notify/Success";
 import Error from "../../notify/Error";
 import createSize from "../../../utils/createSIze";
@@ -30,14 +29,12 @@ const ModalSizeCreate = ({
     const [message, statusCode] = data;
     setMessage(message);
     if (statusCode === 201) {
-      setUploadCategorySection(!uploadCategorySection);
       setOpenSuccess(true);
-      await Promise.delay(1200);
+      setUploadCategorySection(!uploadCategorySection);
       setOpenSuccess(false);
       setOpenModalCreateSize(false);
     } else {
       setOpenError(true);
-      await Promise.delay(1200);
       setOpenError(false);
     }
     setLoading(false);
