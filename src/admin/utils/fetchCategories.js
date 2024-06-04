@@ -5,6 +5,7 @@ const fetchCategories = async (setCategories) => {
       );
       if (response.ok) {
         const data = await response.json();
+        console.log(data);
         setCategories(data);
       } else {
         console.error("Error al obtener las categorías");
