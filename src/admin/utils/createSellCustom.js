@@ -3,7 +3,6 @@ const createSellCustom = (name,price, method_payment) => {
         name, price, method_payment
     }
     if(method_payment == '') data.method_payment = 'EFECTIVO'
-    console.log(data);
 
     fetch(`${import.meta.env.VITE_API_URL}/sell/registerSell`, {
         method: "POST",

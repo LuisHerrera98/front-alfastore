@@ -16,7 +16,6 @@ const createSize = async (name, category_id) => {
     );
     const statusCode = response.status;
     const data = await response.json();
-    console.log(data);
     if (data) {
       return [data.message, statusCode]
     }

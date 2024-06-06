@@ -54,7 +54,6 @@ const ProductForm = ({ category_id, category_name }) => {
     
     fetchSizes(setSizes, category_id);
     for (let i = 0; i < sizes.length; i++) {
-      console.log(sizes[i]);
       stockArray.push({ id: size[i]._id });
     }
   }, []);
