@@ -22,7 +22,7 @@ const createArraySizes = (inputs) => {
 const createProduct = async (name, cost, price, image, category_id, event) => {
 
     const stock = createArraySizes(event)
-    
+
     const formData = new FormData()
     formData.append("name", name)
     formData.append("cost", cost)
@@ -34,7 +34,7 @@ const createProduct = async (name, cost, price, image, category_id, event) => {
     formData.append("stock", stock)
 
     try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/product/create`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/product`, {
             method: 'POST', 
             body: formData
         })

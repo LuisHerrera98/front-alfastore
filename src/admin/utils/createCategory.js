@@ -7,7 +7,7 @@ const createCategory = async (name,image) => {
     }
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/category`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/category`, {
           method: 'POST', 
           body: formData
       })

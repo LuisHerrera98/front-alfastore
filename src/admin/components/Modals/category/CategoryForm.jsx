@@ -27,18 +27,17 @@ const CategoryForm = ({ setOpenModalCreateCategory }) => {
     button.disabled = true;
     const data = await createCategory(name, image);
     const [ message, statusCode] = data;
-    console.log(statusCode);
     setMessage(message)
     if(statusCode === 201) {
       setOpenSuccess(true)
       setTimeout(() => {
-      }, 1200);
+      }, 500);
       setOpenSuccess(false)
       navigate("/admin/");
     }else{
       setOpenError(true)
       setTimeout(() => {
-      }, 1200);
+      }, 500);
       setOpenError(false)
     }
     setLoading(false);

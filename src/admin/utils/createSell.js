@@ -3,7 +3,7 @@ const createSell = (name, category_name, cost, price, image, size_name, method_p
         name, category_name, cost, price, image, size_name, method_payment
     };
 
-    fetch(`${import.meta.env.VITE_API_URL}/sell/registerSell`, {
+    fetch(`${import.meta.env.VITE_API_URL}/sell`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

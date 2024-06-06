@@ -1,7 +1,7 @@
 const fetchCategories = async (setCategories) => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/category`
+        `${import.meta.env.VITE_API_URL}/category`
       );
       if (response.ok) {
         const data = await response.json();

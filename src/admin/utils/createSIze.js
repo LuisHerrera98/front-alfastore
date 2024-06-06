@@ -5,7 +5,7 @@ const createSize = async (name, category_id) => {
   };
   try {
     const response = await fetch(
-      `${import.meta.env.VITE_API_URL}/size/create`,
+      `${import.meta.env.VITE_API_URL}/size`,
       {
         method: "POST",
         headers: {
@@ -16,6 +16,7 @@ const createSize = async (name, category_id) => {
     );
     const statusCode = response.status;
     const data = await response.json();
+    console.log(data);
     if (data) {
       return [data.message, statusCode]
     }

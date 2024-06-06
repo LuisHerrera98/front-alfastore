@@ -5,8 +5,8 @@ async function decrementAndSell(product_id, size_id) {
     };
 
     try {
-        await fetch(`${import.meta.env.VITE_API_URL}/size/decrement`, {
-            method: 'PUT',
+        await fetch(`${import.meta.env.VITE_API_URL}/product/decrement`, {
+            method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'
             },

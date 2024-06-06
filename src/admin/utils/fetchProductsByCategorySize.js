@@ -2,7 +2,7 @@ const fetchProductsByCategorySize = async (setProducts, category_id, size_id) =>
 
     try {
         const response = await fetch(
-            `${import.meta.env.VITE_API_URL}/product/products/category`, {
+            `${import.meta.env.VITE_API_URL}/product/products`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

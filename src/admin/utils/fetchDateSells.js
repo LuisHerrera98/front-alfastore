@@ -1,7 +1,7 @@
 const fetchDateSell = async (setDateSells) => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/sell/dateSells`
+        `${import.meta.env.VITE_API_URL}/sell`
       );
       if (response.ok) {
         const data = await response.json();

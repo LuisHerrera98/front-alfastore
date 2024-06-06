@@ -20,13 +20,13 @@ const ProductCard = ({ product, size_id, setModalIncrement, setModalPayment, set
             category_id: product.category_id,
             cost: product.cost,
             price: product.price,
-            image: product.images[0]
+            image: product.image[0]
         })
     }
 
     return (
         <div className='card-product' key={product._id}>
-            <img className='card-product-image' src={`${product.images[0]}`} alt="" />
+            <img className='card-product-image' src={`${product.image[0].url}`} alt="" />
             <p className='name'>{product.name}</p>
             <p className='price'>${product.price}</p>
             <div className='box-cuantity'>

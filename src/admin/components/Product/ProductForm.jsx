@@ -40,10 +40,10 @@ const ProductForm = ({ category_id, category_name }) => {
     );
     setLoading(false);
     product ? setSuccess(true) : setError(true);
-    setTimeout(() => {
-      onResetForm()
-      navigate(`/admin/`);
-    }, 1000);
+    // setTimeout(() => {
+    //   onResetForm()
+    //   navigate(`/admin/`);
+    // }, 1000);
   };
 
   const handleImage = (e) => {
