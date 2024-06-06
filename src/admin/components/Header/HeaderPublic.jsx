@@ -6,7 +6,7 @@ import Menu from "./images/menubar.png";
 import Admin from "./images/admin.png";
 import "./Header.css";
 
-const Header = ({ reload = null, setReload = null }) => {
+const HeaderPublic = ({ reload = null, setReload = null }) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const Header = ({ reload = null, setReload = null }) => {
 
   return (
     <header className="header-mobile">
-      <Link className="link-logo" to={`/admin`}>
+      <Link className="link-logo" to={`/`}>
         <div className="box-left">
           <img className="image" src={Logo} alt="" />
           <h2 className="title">Alfastore</h2>
@@ -33,17 +33,14 @@ const Header = ({ reload = null, setReload = null }) => {
         {openMenu ? (
           <div className="close">
             <ul>
-              <Link className="title" to={`/admin`}>
+              <Link className="title" to={`/`}>
                 <li>INICIO</li>
-              </Link>
-              <Link className="title" to={`/admin/dateSells`}>
-                <li>VENTAS</li>
               </Link>
               {categories.map((category) => (
                 <Link
                   key={category._id}
                   className="title"
-                  to={`/admin/categoria/${category._id}/${category.name}`}
+                  to={`/categoria/${category._id}/${category.name}`}
                 >
                   <li>{category.name}</li>
                 </Link>
@@ -54,15 +51,9 @@ const Header = ({ reload = null, setReload = null }) => {
       </div>
 
       <div className="box-right">
-        <div className="box-image">
-          <img className="image" src={Admin} alt="" />
-        </div>
-        <Link className="title" to={`/admin/panel`}>
-          Admin
-        </Link>
       </div>
     </header>
   );
 };
 
-export default Header;
+export default HeaderPublic;
